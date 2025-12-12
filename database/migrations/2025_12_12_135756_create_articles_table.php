@@ -22,7 +22,6 @@ return new class extends Migration
             $table->date('date')->nullable();
             $table->string('lang')->default('en');
             $table->integer('map')->nullable();
-            $table->timestamps();
             $table->boolean('no_index')->default(false);
             $table->integer('type')->default(0);
             $table->string('external_content')->nullable();
