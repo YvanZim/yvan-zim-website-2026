@@ -20,4 +20,8 @@ class Page extends Model
         }
 
     }
+
+    public function sections(){
+        return $this->hasMany(PageSection::class);
+    }
 }
