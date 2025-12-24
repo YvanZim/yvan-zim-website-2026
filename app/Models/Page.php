@@ -21,7 +21,7 @@ class Page extends Model
 
     }
 
-    public function sections(){
-        return $this->hasMany(PageSection::class);
+    public function getSectionsAttribute(){
+        return json_decode($this->content);
     }
 }

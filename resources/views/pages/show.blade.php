@@ -14,9 +14,9 @@
 @endsection
 
 @section('content')
-    
+
     @foreach($page->sections as $section)
-        @include($section->template->ref, ['section' => $section])
+        @include($section->type, ['section' => $section->data])
     @endforeach
 
-@endsection  
+@endsection

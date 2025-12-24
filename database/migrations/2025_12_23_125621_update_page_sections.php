@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\DB;
 return new class extends Migration
 {
 
-    // [{"type":"sections.basic","data":{"title":"Test","content":"<p>Testibg<\/p>"}}]
-    //
     /**
      * Run the migrations.
      */
@@ -29,11 +27,11 @@ return new class extends Migration
                unset($section['page_id']);
                unset($section['template_id']);
                array_push($content,[
-                   'section' => $template->ref,
+                   'type' => $template->ref,
                    'data' => $section
                ]);
            }
-           $page->content = json_encode($content);
+           $page->content = $content;
            $page->save();
        }
     }
