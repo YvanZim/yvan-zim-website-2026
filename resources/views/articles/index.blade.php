@@ -3,16 +3,10 @@
 @section('header')
     <title>Articles | Yvan Zim </title>
     <meta name="description" content="Yvan Zim New & Updates">
-
-    {{-- <meta property="og:title" content="{{ $article->og_title ?? ''}}">
-    <meta property="og:description" content="{{ $article->og_description  ?? ''}}">
-    <meta property="og:image" content="{{ $article->og_image  ?? ''}}">
-    <meta property="og:url" content="https://yvanzim.com/{{ $article->link }}"> --}}
-
 @endsection
 
 @section('content')
-    <div class="p-10">
+    <div class="p-10 max-w-7xl mx-auto">
 
         <!--  -->
         <h1  class="text-4xl pt-0 mt-0 pb-3"> News </h1>
@@ -35,14 +29,16 @@
                             <div class="py-2"> {{ $article->excerpt }} </div>
                             @if($article->expired)
                                 <strong> {{ trans('app.show_past', [], $article->lang) }} </strong>
-                            @else 
+                            @else
                                 <x-utils.buttons.primary :url="$article->link" label="{{ trans('app.read_more', [], $article->lang) }}"/>
                             @endif
                         </div>
                     </div>
                 </div>
             @endforeach
-        @else 
+
+            {{ $articles->links() }}
+        @else
             <div class="py-5 mb-5">
                 <p> No articles. </p>
                 <p v-else-if="langProp == 'fr'"> Aucun articles. </p>

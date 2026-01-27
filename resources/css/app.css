@@ -10,6 +10,14 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+p {
+    @apply mb-4 leading-relaxed text-gray-800;
+}
+
+hr {
+    @apply border-gray-300;
+}
+
 .brand_blue {
     background: #0A2749;
 }
@@ -36,4 +44,8 @@
 
 .border_yellow {
     border-color: #CAA45D;
+}
+
+.color_yellow {
+    color: #caa45d;
 }

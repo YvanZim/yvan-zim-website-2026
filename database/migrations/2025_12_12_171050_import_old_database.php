@@ -13,6 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (DB::connection()->getDriverName() === 'sqlite') {
+            return;
+        }
+
         $sqlPath = database_path('imports/yvanzim_app.sql');
         if (File::exists($sqlPath)) {
             $sql = File::get($sqlPath);

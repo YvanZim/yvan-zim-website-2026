@@ -10,6 +10,7 @@ use App\Http\Controllers\Links\ShowLinkController;
 use App\Http\Controllers\Static\ShowHtmlController;
 use App\Http\Controllers\Lang\ToggleLangController;
 use App\Http\Controllers\Qr\QrRedirectController;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 
 /*
@@ -28,16 +29,18 @@ use App\Http\Controllers\Qr\QrRedirectController;
 Route::get('sitemap', [Controller::class,'sitemap']);
 
 // Send data
-Route::post('/send', ContactFormController::class);
+Route::post('/send', ContactFormController::class)->middleware(ProtectAgainstSpam::class);
 
 Route::get('/links', ShowLinkController::class);
 Route::get('{lang}/links', ShowLinkController::class);
 
 // Articles
+
 Route::get('news', IndexArticleController::class);
+Route::get('/{parent?}/news', IndexArticleController::class);
+
+Route::get('/{parent?}/news/{slug}', ShowArticleController::class)->name('show_article');
 Route::get('news/{slug}', ShowArticleController::class)->name('show_article');
-Route::get('/{parent}/news', ShowArticleController::class);
-Route::get('/{parent}/news/{slug}', ShowArticleController::class)->name('show_article');
 
 Route::get('/qr/{slug}', QrRedirectController::class);
 Route::get('/static/{slug}', ShowHtmlController::class);

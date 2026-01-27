@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Articles;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class IndexArticleController extends Controller
 {
@@ -17,8 +17,7 @@ class IndexArticleController extends Controller
             $lang = 'en';
         }
 
-        // where('lang', $lang)->
-        $articles = Article::where('no_index', 0)->orderBy('date', 'DESC')->get();
+        $articles = Article::where('no_index', 0)->orderBy('date', 'DESC')->paginate(10);
         return view('articles.index')->with('articles', $articles);
 
     }

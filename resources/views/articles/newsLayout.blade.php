@@ -19,7 +19,7 @@
 
     <div class="md:flex justify-center items-center p-10">
         <div class="md:w-3/12 md:pr-5">
-            <a @if( $article->lang == 'en') href="/news" @else href="/{{ $article->lang }}/news" @endif class="flex align-middle mb-2"> 
+            <a @if( $article->lang == 'en') href="/news" @else href="/{{ $article->lang }}/news" @endif class="flex align-middle mb-2">
                 <span class="material-icons align-bottom inline-block text-md mx-0">chevron_left</span>
                 <span class="inline-block">Back</span>
             </a>
@@ -30,7 +30,7 @@
             <img src="{{ $article->image }}">
         </div>
     </div>
-    
+
     <div class="flex justify-center article">
         <div class="md:w-7/12 px-10">
             {!! $article->content !!}

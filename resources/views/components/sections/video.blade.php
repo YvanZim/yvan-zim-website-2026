@@ -1,4 +1,4 @@
-<div class="flex flex-wrap-reverse items-center py-6">
+<div class="flex flex-wrap-reverse items-center py-6 bg-gray-100">
 
     <div class="w-full md:w-6/12 lg:w-7/12 p-8 px-8 md:py-12">
         <div class="aspect-w-16 aspect-h-9">
