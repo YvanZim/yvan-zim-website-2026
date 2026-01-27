@@ -10,6 +10,13 @@ class Page extends Model
     protected $appends = ['link'];
     protected $guarded = [];
 
+    protected function casts(): array
+    {
+        return [
+            'content' => 'array',
+        ];
+    }
+
     public function getLinkAttribute() {
 
         if( $this->lang == 'en'){
@@ -22,6 +29,21 @@ class Page extends Model
     }
 
     public function getSectionsAttribute(){
-        return json_decode($this->content);
+        $content = $this->content;
+
+        if (is_string($content)) {
+            $content = json_decode($content, true);
+        }
+
+        if (! is_array($content)) {
+            return collect();
+        }
+
+        return collect($content)->map(function ($block) {
+            return (object) [
+                'type' => $block['type'],
+                'data' => (object) ($block['data'] ?? []),
+            ];
+        });
     }
 }
