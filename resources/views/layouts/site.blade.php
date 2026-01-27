@@ -16,11 +16,10 @@
     <link rel="apple-touch-icon" href="https://yvanzim.com/images/pwa-icon.png">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0A2749"> 
-    {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> --}}
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0A2749">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
 
     <!-- Hotjar Tracking Code for https://yvanzim.com -->
@@ -54,7 +53,7 @@
 <body class="antialiased">
 
     @include('components.nav.topnav')
-    
+
     @yield('content')
 
     @env('local')

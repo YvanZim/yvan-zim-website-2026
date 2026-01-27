@@ -18,7 +18,8 @@ return new class extends Migration
        $pages = Page::all();
        foreach($pages as $page){
            $content = [];
-           foreach($page->sections as $section){
+           $sections = PageSection::where('page_id', $page->id)->get();
+           foreach($sections as $section){
                $template = DB::table('templates')->where('id', $section->template_id)->first();
                $section = $section->toArray();
                unset($section['id']);
