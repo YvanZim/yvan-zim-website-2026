@@ -3,11 +3,11 @@
 namespace App\Filament\Resources\Articles\Schemas;
 
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class ArticleForm
 {
@@ -20,10 +20,25 @@ class ArticleForm
                 TextInput::make('meta_description'),
                 TextInput::make('slug')
                     ->required(),
-                FileUpload::make('image')
-                    ->image(),
-                Textarea::make('content')
+                SpatieMediaLibraryFileUpload::make('image')
+                    ->collection('images')
+                    ->image()
+                    ->imageEditor(),
+                RichEditor::make('content')
                     ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'h2',
+                        'h3',
+                        'bulletList',
+                        'orderedList',
+                        'link',
+                        'redo',
+                        'undo',
+                    ])
                     ->columnSpanFull(),
                 DatePicker::make('date'),
                 TextInput::make('lang')

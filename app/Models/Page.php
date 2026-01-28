@@ -3,12 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Page extends Model
+class Page extends Model implements HasMedia
 {
+    use InteractsWithMedia;
 
     protected $appends = ['link'];
     protected $guarded = [];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('images');
+    }
 
     protected function casts(): array
     {

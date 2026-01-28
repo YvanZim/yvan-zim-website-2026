@@ -18,7 +18,7 @@ use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 
@@ -54,10 +54,11 @@ class PageResource extends Resource
                 TextInput::make('og_description')
                     ->label('OG Description')
                     ->maxLength(240),
-                FileUpload::make('og_image')
+                SpatieMediaLibraryFileUpload::make('og_image')
                     ->label('OG Image')
-                    ->disk('public')
+                    ->collection('images')
                     ->image()
+                    ->imageEditor()
                     ->columnSpanFull(),
                 Toggle::make('live')
                     ->default(true),
@@ -78,7 +79,11 @@ class PageResource extends Resource
                             ->schema([
                                 TextInput::make('title')->required(),
                                 RichEditor::make('content'),
-                                TextInput::make('image')->label('Image URL'),
+                                FileUpload::make('image')
+                                    ->label('Image')
+                                    ->image()
+                                    ->imageEditor()
+                                    ->directory('sections'),
                                 TextInput::make('link')->label('Button URL'),
                                 TextInput::make('button')->label('Button Label'),
                             ]),
@@ -87,7 +92,11 @@ class PageResource extends Resource
                             ->schema([
                                 TextInput::make('title')->required(),
                                 RichEditor::make('content'),
-                                TextInput::make('image')->label('Image URL'),
+                                FileUpload::make('image')
+                                    ->label('Image')
+                                    ->image()
+                                    ->imageEditor()
+                                    ->directory('sections'),
                                 TextInput::make('link')->label('Button URL'),
                                 TextInput::make('button')->label('Button Label'),
                             ]),
@@ -138,7 +147,11 @@ class PageResource extends Resource
                                 TextInput::make('location')->label('Location Name'),
                                 RichEditor::make('content'),
                                 RichEditor::make('content_two')->label('Location Description'),
-                                TextInput::make('image')->label('Image URL'),
+                                FileUpload::make('image')
+                                    ->label('Image')
+                                    ->image()
+                                    ->imageEditor()
+                                    ->directory('sections'),
                                 Select::make('review_ids')
                                     ->label('Select Reviews')
                                     ->multiple()
