@@ -1,17 +1,23 @@
 @extends('layouts.site')
 
 @section('header')
-    <title>Articles | Yvan Zim </title>
-    <meta name="description" content="Yvan Zim New & Updates">
+    <title>{{ App::getLocale() === 'fr' ? 'Actualités' : 'News' }} | Yvan Zim</title>
+    <meta name="description" content="{{ App::getLocale() === 'fr' ? 'Actualités et mises à jour de Yvan Zim - Magicien professionnel' : 'News and updates from Yvan Zim - Professional Magician' }}">
+    <meta property="og:title" content="{{ App::getLocale() === 'fr' ? 'Actualités' : 'News' }} | Yvan Zim">
+    <meta property="og:description" content="{{ App::getLocale() === 'fr' ? 'Actualités et mises à jour de Yvan Zim' : 'News and updates from Yvan Zim' }}">
+    <meta property="og:image" content="https://assets.yvanzim.com/images/yvanzim_logo.png">
+    <meta property="og:url" content="https://yvanzim.com/{{ App::getLocale() === 'fr' ? 'fr/news' : 'news' }}">
+@endsection
+
+@section('seo')
+    <x-seo.meta />
 @endsection
 
 @section('content')
     <div class="p-10 max-w-7xl mx-auto">
 
-        <!--  -->
-        <h1  class="text-4xl pt-0 mt-0 pb-3"> News </h1>
+        <h1 class="text-4xl pt-0 mt-0 pb-3">{{ App::getLocale() === 'fr' ? 'Actualités' : 'News' }}</h1>
         <hr class="px-4 pb-5">
-        <!--  -->
 
         @if( isset($articles) )
             @foreach($articles as $article)
@@ -40,8 +46,7 @@
             {{ $articles->links() }}
         @else
             <div class="py-5 mb-5">
-                <p> No articles. </p>
-                <p v-else-if="langProp == 'fr'"> Aucun articles. </p>
+                <p>{{ App::getLocale() === 'fr' ? 'Aucun article.' : 'No articles.' }}</p>
             </div>
         @endif
 

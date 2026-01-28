@@ -1,6 +1,6 @@
-@if( $section->page_title == 1)
+@if($isFirstSection ?? false)
     <x-utils.titles.h1 :content="$section->title"/>
-@else 
+@else
     <x-utils.titles.h2 :content="$section->title"/>
 @endif
 

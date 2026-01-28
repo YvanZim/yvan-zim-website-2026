@@ -8,7 +8,7 @@
 
         <div class="md:h-full w-full mt-0 md:flex md:w-6/12 lg:w-6/12 xl:w-6/12 xl:px-16 p-8 bg-white items-center">
             <div class="pt-0 mt-0"> 
-                <x-utils.titles.dynamic :section="$section"/>
+                <x-utils.titles.dynamic :section="$section" :isFirstSection="$isFirstSection ?? false"/>
                 {!! $section->content !!}             
                 @if( $section->link )
                     <x-utils.buttons.primary :url="$section->link" :label="$section->button"/>

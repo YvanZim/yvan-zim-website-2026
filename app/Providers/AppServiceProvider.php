@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Article;
 use App\Models\Menu;
+use App\Models\Page;
+use App\Observers\ArticleObserver;
+use App\Observers\PageObserver;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -23,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Page::observe(PageObserver::class);
+        Article::observe(ArticleObserver::class);
         View::composer('*', function ($view) {
             $lang = request()->segment(1) === 'fr' ? 'fr' : 'en';
             App::setLocale($lang);

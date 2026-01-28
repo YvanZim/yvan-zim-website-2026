@@ -21,11 +21,11 @@
 
         <div class="w-5/12 sm:w-6/12 lg:hidden text-right text-white p-0 m-0 ">
             <div class="flex h-full justify-end" onclick="dropdownToggle('TopNav')"> 
-                <button class="menu_icon p-0 m-0"> 
-                    <span class="material-icons-outlined align-bottom inline-block text-2xl sm:text-3xl mx-0 ease-in-out"> menu </span>
+                <button class="menu_icon p-0 m-0">
+                    <x-heroicon-o-bars-3 class="w-6 h-6 sm:w-8 sm:h-8 inline-block"/>
                 </button>
-                <button class="hidden menu_icon p-0 m-0"> 
-                    <span class="material-icons-outlined align-bottom inline-block text-2xl sm:text-3xl mx-0 ease-in-out"> close </span>
+                <button class="hidden menu_icon p-0 m-0">
+                    <x-heroicon-o-x-mark class="w-6 h-6 sm:w-8 sm:h-8 inline-block"/>
                 </button>
             </div>
         </div>
@@ -38,8 +38,8 @@
                 <li  class="py-4 lg:pr-10 lg:py-0 m-0"> 
                     @if( is_array($item) )
                         <div class="inline-block">
-                            <span  class="cursor-pointer" onclick="dropdownToggle('{{ $index }}Dropdown')"> 
-                                {{ $index }}<span class="material-icons align-bottom inline-block text-sm mx-0">expand_more</span>
+                            <span class="cursor-pointer whitespace-nowrap" onclick="dropdownToggle('{{ $index }}Dropdown')">
+                                {{ $index }}<x-heroicon-o-chevron-down class="w-3 h-3 inline-block ml-0.5"/>
                             </span> 
                             <div class="mt-0 pt-4 lg:absolute brand_blue hidden -ml-3" id="{{ $index }}Dropdown">
                                 <ul class="lg:text-left bg-white text-gray-700 border-gray-200 border">

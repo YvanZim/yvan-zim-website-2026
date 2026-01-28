@@ -25,8 +25,14 @@ use Spatie\Honeypot\ProtectAgainstSpam;
 */
 
 
-// admin routes
-Route::get('sitemap', [Controller::class,'sitemap']);
+// Sitemap route - serves the generated sitemap.xml
+Route::get('sitemap.xml', function () {
+    $path = public_path('sitemap.xml');
+    if (!file_exists($path)) {
+        \App\Services\SitemapGenerator::generate();
+    }
+    return response()->file($path, ['Content-Type' => 'application/xml']);
+});
 
 // Send data
 Route::post('/send', ContactFormController::class)->middleware(ProtectAgainstSpam::class);

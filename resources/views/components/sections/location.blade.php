@@ -1,7 +1,7 @@
 <div>
 
     <div class="md:h-[calc(100vh-100px)]">
-    
+
         <div class="main_height flex flex-wrap h-full items-center md:mt-0 p-0 bg-white">
 
             <div class="h-96 w-full md:w-6/12 lg:w-7/12 xl:w-8/12 md:h-full bg_show_image" style="background:url('{{$section->image}}')">
@@ -10,26 +10,26 @@
 
             <div class="w-full p-8 mt-0 md:flex md:w-6/12 lg:w-5/12  md:h-full  xl:w-4/12 xl:px-16 bg-white items-center">
                 <div class="pt-0 mt-0">
-                    <x-utils.titles.dynamic :section="$section"/>
+                    <x-utils.titles.dynamic :section="$section" :isFirstSection="$isFirstSection ?? false"/>
                     <p> Yvan Zim offre une expérience de magie unique et mémorable pour une variété d'événements et d'occasions spéciales. </p>
                     <p> Il ajoute une dose de mystère et d'émerveillement à toutes les occasions, que ce soit un mariage, une fête d'entreprise ou une soirée privée. </p>
                     <p> Yvan combine magie, mentalisme et humour dans ses performances pour vous offrir une expérience captivante. </p>
                     <p> Si vous recherchez un magicien à {{ $section->location }} pour éblouir votre public, Yvan Zim est à votre disposition pour créer une expérience unique et mémorable. </p>
                 </div>
             </div>
-        
+
         </div>
 
     </div>
 
-    <!--  -->           
-    <div class="min-h-full">
+    <!--  -->
+    <div class="min-h-full bg-gray-100">
         <div class="flex flex-wrap items-center md:mt-0 p-8">
             <div class="w-full" >
                 <h3 class="text-xl pb-2 font-medium"> Prendre Contact </h3>
                 <p> Pour réserver Yvan pour un spectacle de magie a {{ $section->location }}, ou pour toute information complémentaire, merci de remplir le formulaire, ou d'envoyer un email. </p>
                 <x-forms.two-column />
-            </div> 
+            </div>
         </div>
     </div>
     <!--  -->
@@ -146,7 +146,7 @@
             </div>
 
             <div class="md:w-9/12 md:px-8">
-            
+
                 <x-utils.displays.accordion title="Magic Close-up à {{$section->location}}" tabId="closeUpSection">
                     <p> Embauchez Yvan Zim pour de la magie close-up à {{ $section->location }} est la promesse d'une expérience magique et immersive qui éblouira vos invités.</p>
                     <p> Ce format permet une expérience plus intime et rapprochée. Yvan pourra créer des moments de stupéfaction et d'émerveillement en les plaçant directement entre les mains de votre public. </p>
@@ -160,7 +160,7 @@
                         <p> Embauchez Yvan Zim pour de la magie de scène à {{ $section->location }} est la promesse d'un spectacle spectaculaire qui enchantera votre public. </p>
                         <p> La durée du spectacle varie en fonction de vos besoins. Mais en général, Yvan propose des spectacles de 30, 45 ou 1h selon vos besoins. </p>
                         <p> Avec son charisme sur scène et sa maîtrise des illusions, Yvan crée un spectacle captivant qui transporte les spectateurs dans un monde de mystère et d'émerveillement.</p>
-                        <p> Que ce soit pour un grand événement d'entreprise, un mariage élégant ou une soirée privée, Yvan Zim sait comment créer une expérience magique inoubliable pour des grandes salles.</p> 
+                        <p> Que ce soit pour un grand événement d'entreprise, un mariage élégant ou une soirée privée, Yvan Zim sait comment créer une expérience magique inoubliable pour des grandes salles.</p>
                         <p> Ses performances de magie de scène sont soigneusement chorégraphiées pour susciter l'admiration et l'étonnement, laissant une impression durable sur tous ceux qui assistent à son spectacle. </p>
                         <p> Faites de votre événement à {{ $section->location }} une occasion spéciale en engageant Yvan Zim, le magicien professionnel qui apportera une dose de grandeur et d'enchantement à votre soirée.</p>
                     </slot>
@@ -176,7 +176,7 @@
                 </x-utils.displays.accordion>
 
             </div>
-        
+
         </div>
 
     </div>
@@ -189,14 +189,14 @@
 
 
     <!--  -->
-    <div class="md:flex p-8"> 
-        
+    <div class="md:flex p-8">
+
         <div class="md:w-4/12 p-8">
             <h2 class="text-2xl pt-0 mt-0 pb-3"> À propos </h2>
             <p>Avec plus de 7 ans d'expérience en tant que magicien professionnel, Yvan Zim a émerveillé des publics en Irlande et en Angleterre avant de déménager en France en 2023.</p>
             <p>Yvan Zim a remporté le titre de meilleur artiste familial d'Irlande en 2022 et a été finaliste du meilleur artiste familial en Angleterre en 2022. Son spectacle "Tangled d'Illusion" été complet au Fringe Festival en Écosse en 2023.</p>
         </div>
-        
+
         <div class="md:w-4/12 p-8">
             <h2 class="text-2xl pt-0 mt-0 pb-3"> Pour Réserver </h2>
             <p>Le processus de réservation est simple : il suffit de contacter Yvan Zim pour discuter des besoins spécifiques de l'événement, et il peut ensuite proposer une offre personnalisée.</p>

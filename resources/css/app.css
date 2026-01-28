@@ -15,7 +15,7 @@ p {
 }
 
 hr {
-    @apply border-gray-300;
+    @apply border-t border-gray-300;
 }
 
 .brand_blue {

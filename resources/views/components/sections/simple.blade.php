@@ -1,5 +1,5 @@
 <div class="p-4 md:p-8 lg:p-16 text-center">
-    <x-utils.titles.dynamic :section="$section" />
+    <x-utils.titles.dynamic :section="$section" :isFirstSection="$isFirstSection ?? false"/>
     {!! $section->title !!}
     {!! $section->content !!}
     @if( isset($section->link) )         

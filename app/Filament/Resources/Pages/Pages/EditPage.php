@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Pages\Pages;
 
 use App\Filament\Resources\Pages\PageResource;
+use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
@@ -13,6 +14,11 @@ class EditPage extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
+            Action::make('view')
+                ->label('View Page')
+                ->icon('heroicon-o-eye')
+                ->url(fn () => url($this->record->link))
+                ->openUrlInNewTab(),
             DeleteAction::make(),
         ];
     }

@@ -7,7 +7,7 @@
             <div class="md:h-full w-full md:w-6/12 bg-white md:flex">
                 <div class="inline-block p-8 md:pt-16 md:mt-16">
 
-                    <x-utils.titles.dynamic :section="$section"/>
+                    <x-utils.titles.dynamic :section="$section" :isFirstSection="$isFirstSection ?? false"/>
 
                     {!! $section->content !!}
 

@@ -8,7 +8,7 @@
 
         <div class="w-full p-8 mt-0 md:flex md:w-6/12 lg:w-5/12  md:h-full  xl:w-4/12 xl:px-16 bg-white items-center">
             <div class="pt-0 mt-0">
-                <x-utils.titles.dynamic :section="$section"/>
+                <x-utils.titles.dynamic :section="$section" :isFirstSection="$isFirstSection ?? false"/>
                 {!! $section->content !!}    
             </div>
         </div>

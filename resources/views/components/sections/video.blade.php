@@ -7,7 +7,7 @@
     </div>
 
     <div class="w-full md:w-6/12 lg:w-5/12 p-8 px-8 md:py-12">
-        <x-utils.titles.dynamic :section="$section"/>
+        <x-utils.titles.dynamic :section="$section" :isFirstSection="$isFirstSection ?? false"/>
         {!! $section->content !!}
         <x-utils.buttons.primary :url="$section->link" :label="$section->button" />
     </div>

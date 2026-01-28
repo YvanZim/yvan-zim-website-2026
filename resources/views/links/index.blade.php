@@ -20,8 +20,7 @@
     {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> --}}
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"> 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
 
     <!-- Styles -->
     @vite('resources/css/app.css')

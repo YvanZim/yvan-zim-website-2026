@@ -18,7 +18,7 @@
 
 <div class="inline-block">
     <span onclick="toggleLangNav('{{$elmId}}')" class="cursor-pointer">
-        {{ ucfirst($currentLang) }}<span class="material-icons align-bottom inline-block text-sm mx-0">expand_more</span>
+        {{ ucfirst($currentLang) }}<x-heroicon-o-chevron-down class="w-3 h-3 inline-block ml-0.5"/>
     </span>
 
     <div class="mt-0 pt-4 md:absolute brand_blue -ml-3 hidden z-20" id="langDropdown{{ $elmId }}">

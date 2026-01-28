@@ -6,7 +6,9 @@
 
     @yield('header')
 
-     {{-- Search console --}}
+    @yield('seo')
+
+    {{-- Search console --}}
     <meta name="google-site-verification" content="-zSieRhDUbdPX8PohZwUx871zsBo1oxpxqim-68z_I0" />
     <meta name="referrer" content="no-referrer-when-downgrade">
     <link rel="icon" href="/images/favicon.png">
@@ -20,7 +22,6 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
 
     <!-- Hotjar Tracking Code for https://yvanzim.com -->
     <script>

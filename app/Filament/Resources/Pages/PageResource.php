@@ -15,7 +15,6 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Filament\Forms\Components\Builder;
-use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -73,7 +72,6 @@ class PageResource extends Resource
                                 RichEditor::make('content')->label('Subtitle HTML'),
                                 TextInput::make('link')->label('Button URL'),
                                 TextInput::make('button')->label('Button Label'),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.two-columns')
                             ->label('Two Columns (Image + Text)')
@@ -83,7 +81,6 @@ class PageResource extends Resource
                                 TextInput::make('image')->label('Image URL'),
                                 TextInput::make('link')->label('Button URL'),
                                 TextInput::make('button')->label('Button Label'),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.half-columns')
                             ->label('Half Columns (50/50)')
@@ -93,7 +90,6 @@ class PageResource extends Resource
                                 TextInput::make('image')->label('Image URL'),
                                 TextInput::make('link')->label('Button URL'),
                                 TextInput::make('button')->label('Button Label'),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.simple')
                             ->label('Simple (Centered Text)')
@@ -102,14 +98,12 @@ class PageResource extends Resource
                                 RichEditor::make('content'),
                                 TextInput::make('link')->label('Button URL'),
                                 TextInput::make('button')->label('Button Label'),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.contact-form')
                             ->label('Contact Form')
                             ->schema([
                                 TextInput::make('title')->required(),
                                 RichEditor::make('content'),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.contact-bar')
                             ->label('Contact Bar (CTA)')
@@ -128,7 +122,6 @@ class PageResource extends Resource
                                     ->multiple()
                                     ->options(Review::pluck('name', 'id'))
                                     ->searchable(),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.video')
                             ->label('Video + Text')
@@ -137,7 +130,6 @@ class PageResource extends Resource
                                 RichEditor::make('content'),
                                 TextInput::make('link')->label('Button URL'),
                                 TextInput::make('button')->label('Button Label'),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.location')
                             ->label('Location Page')
@@ -152,14 +144,12 @@ class PageResource extends Resource
                                     ->multiple()
                                     ->options(Review::pluck('name', 'id'))
                                     ->searchable(),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.location-list')
                             ->label('Location List')
                             ->schema([
                                 TextInput::make('title'),
                                 RichEditor::make('content'),
-                                Checkbox::make('page_title')->label('Use as H1'),
                             ]),
                         Builder\Block::make('components.sections.logos')
                             ->label('Client Logos')
